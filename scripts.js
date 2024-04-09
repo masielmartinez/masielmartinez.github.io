@@ -1,3 +1,5 @@
+import "./style.css";
+
 /**
  * Data Catalog Project Starter Code - SEA Stage 2
  *
@@ -92,3 +94,16 @@ function removeLastCard() {
     titles.pop(); // Remove last item in titles array
     showCards(); // Call showCards again to refresh
 }
+
+
+
+let mainTitle = document.getElementById("main-title")
+console.log(mainTitle)
+mainTitle.addEventListener("click", function(){
+    console.log("title clicked")
+    const exampleElement = document.createElement("div")
+    exampleElement.innerHTML = "this is an exaple element"
+    document.body.appendChild(exampleElement)
+})
+
+
