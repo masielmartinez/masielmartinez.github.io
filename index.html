@@ -16,62 +16,123 @@
 
 <body>
     <!-- Main Content -->
-
-
     <div class="flex gap-4">
-        <div class="flex-none w-1/3 mx-4"> <!-- fixed side -->
+        <!-- fixed side -->
+        <div class="flex-none w-1/3 mx-4">
             <!-- Profile Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <img src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="Album"
-                    class="w-full rounded-md">
+            <div class="bg-white p-6 rounded-lg ">
+                <img class="mask mask-star" src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg"
+                    alt="Album" class="w-full rounded-md">
                 <div class="mt-4">
-                    <h2 class="text-xl font-semibold text-gray-800">Hello!</h2>
-                    <p class="mt-2 text-gray-600">My name is Masiel Martinez</p>
+                    <h2 class="text-xl font-semibold text-gray-800">Masiel Martinez</h2>
+                    <p class="mt-2 text-gray-600">College student diving into the world of Computer Science and beyond
+                    </p>
+                    <p class="mt-2 text-gray-600">But wait, there's more to me than just lines of code!</p>
                 </div>
             </div>
         </div>
 
+        <!-- scrollable side -->
+        <div class="flex-auto overflow-y-auto overflow-x-hidden max-h-screen mx-4">
 
-        <div class="flex-auto overflow-y-auto overflow-x-hidden max-h-screen mx-4"> <!-- scrollable side -->
-
-            <div>
-                <!-- Card 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-xl font-semibold text-gray-800">Card title!</h2>
-                    <p class="mt-2 text-gray-600">If a dog chews shoes whose shoes does he choose?</p>
+            
+            <div class="grid gap-4 grid-cols-2 my-2">
+                <div>
+                    <!-- message to viewer -->
+                    <div class="bg-pink-200 p-6 rounded-lg">
+                        <h2 class="text-xl font-semibold text-gray-800">Message to the viewer</h2>
+                        <p class="mt-2 text-gray-600">What you are looking at here is my Snap Engineering Academy(SEA) Project Assessment.
+                            I was prompted with creating a "catalog" website for something I am passionate about.
+                            So get to know me through some of things I am passionate about! 
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-xl font-semibold text-gray-800">Favorites</h2>
-                    <select class="select select-bordered w-full mt-2">
-                        <option disabled selected>Favorites&lt;3</option>
-                        <option>Foods</option>
-                        <option>Shows</option>
-                        <option>Movies</option>
-                        <option>Music</option>
-                        <option>Colors</option>
-                        <option>Cities</option>
-                    </select>
-                    <!-- Badges -->
-                    <div class="flex flex-wrap mt-4">
-                        <span class="badge badge-outline mr-2 mb-2">default</span>
-                        <span class="badge badge-primary badge-outline mr-2 mb-2">primary</span>
-                        <span class="badge badge-secondary badge-outline mr-2 mb-2">secondary</span>
-                        <span class="badge badge-accent badge-outline mr-2 mb-2">accent</span>
-                    </div>
+                <div>
+                    <!-- favorites -->
+                    <div class="bg-yellow-100 p-6 rounded-lg">
+                        <h2 class="text-xl font-semibold text-gray-800">Favorites &lt;3</h2>
+                        <select class="select select-bordered w-full mt-2">
+                            <option disabled selected>Select</option>
+                            <option>Foods</option>
+                            <option>Beverages</option>
+                            <option>Music Genres</option>
+                            <option>Colors</option>
+                            <option>Cities</option>
+                        </select>
+                        <!-- badges -->
+                        <div class="flex flex-wrap mt-4">
+                            <span class="badge badge-outline mr-2 mb-2">Pasta</span>
+                            <span class="badge badge-outline mr-2 mb-2">Water</span>
+                            <span class="badge badge-outline mr-2 mb-2">R&B</span>
+                            <span class="badge badge-outline mr-2 mb-2">Blue</span>
+                            <span class="badge badge-outline mr-2 mb-2">Oxnard</span>
+    
+                            <span class="badge badge-outline mr-2 mb-2">Sushi</span>
+                            <span class="badge badge-outline mr-2 mb-2">Coffee</span>
+                            <span class="badge badge-outline mr-2 mb-2">Indie</span>
+                            <span class="badge badge-outline mr-2 mb-2">Green</span>
+                            <span class="badge badge-outline mr-2 mb-2">San Francisco</span>
+    
+                            <span class="badge badge-outline mr-2 mb-2">Hamburgers</span>
+                            <span class="badge badge-outline mr-2 mb-2">Celsius</span>
+                            <span class="badge badge-outline mr-2 mb-2">Cumbia</span>
+                            <span class="badge badge-outline mr-2 mb-2">Pink</span>
+                            <span class="badge badge-outline mr-2 mb-2">Mexico City</span>
+    
+                            <span class="badge badge-outline mr-2 mb-2">Hawaiian BBQ</span>
+                            <span class="badge badge-outline mr-2 mb-2">Tea</span>
+                            <span class="badge badge-outline mr-2 mb-2">Reggaeton</span>
+                            <span class="badge badge-outline mr-2 mb-2">Black</span>
+                            <span class="badge badge-outline mr-2 mb-2">Los Angeles</span>
+    
+                            <span class="badge badge-outline mr-2 mb-2">Thai</span>
+                            <span class="badge badge-outline mr-2 mb-2">Coconut Water</span>
+                            <span class="badge badge-outline mr-2 mb-2">Rock/Punk</span>
+                            <span class="badge badge-outline mr-2 mb-2">Yellow</span>
+                            <span class="badge badge-outline mr-2 mb-2">Okaga</span>
+                        </div>
+                        </div>
+                    
+                </div>
+            </div>
+
+            <!-- birthday countdown -->
+            <div class="grid grid-flow-col gap-5 text-center auto-cols-max place-content-center tooltip tooltip-warning"  data-tip="Days till my birthday (7/10)">
+                <div class="flex flex-col p-2 bg-blue-200 rounded-box text-content">
+                    <span class="countdown font-mono text-5xl">
+                        <span style="--value:03;"></span>
+                    </span>
+                    months
+                </div>
+                <div class="flex flex-col p-2 bg-blue-200 rounded-box text-content">
+                    <span class="countdown font-mono text-5xl">
+                        <span style="--value:01;"></span>
+                    </span>
+                    days
+                </div>
+                <div class="flex flex-col p-2 bg-blue-200 rounded-box text-content">
+                    <span class="countdown font-mono text-5xl">
+                        <span style="--value:10;"></span>
+                    </span>
+                    hours
+                </div>
+                <div class="flex flex-col p-2 bg-blue-200 rounded-box text-content">
+                    <span class="countdown font-mono text-5xl">
+                        <span style="--value:24;"></span>
+                    </span>
+                    min
+                </div>
+                <div class="flex flex-col p-2 bg-blue-200 rounded-box text-content">
+                    <span class="countdown font-mono text-5xl">
+                        <span style="--value:42;"></span>
+                    </span>
+                    sec
                 </div>
             </div>
 
 
-
-
-            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
-                data-name="bmc-button" data-slug="masielmartinez" data-color="#FFDD00" data-emoji="&#9749;"
-                data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000"
-                data-coffee-color="#ffffff">
-                </script>
-
+            <!-- spotify playlist-->
             <div class="grid gap-4 grid-cols-2 my-2">
                 <div>
                     <iframe class="w-full" style="border-radius:12px"
@@ -93,7 +154,10 @@
             </div>
 
 
+
+            <!-- carousels -->
             <div class="flex gap-4">
+                <!-- 1 carousel -->
                 <div class="flex flex-col w-1/3 gap-2">
 
                     <div class="w-full mx-auto carousel rounded-box">
@@ -127,10 +191,10 @@
                         </div>
                     </div>
 
-                    <div class="collapse bg-base-200">
+                    <div class="collapse border">
                         <input type="radio" name="my-accordion-1" checked="checked" />
                         <div class="collapse-title text-xl font-medium">
-                            Click to open this one and close others
+                            Photoshoot
                         </div>
                         <div class="collapse-content">
                             <p>hello</p>
@@ -141,13 +205,9 @@
                 </div>
 
 
-
+                <!-- 2 carousel -->
                 <div class="flex flex-col w-1/3 gap-2">
                     <div class="w-full mx-auto carousel rounded-box">
-                        <div class="carousel-item w-full">
-                            <img src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" class="w-full"
-                                alt="Tailwind CSS Carousel component" />
-                        </div>
                         <div class="carousel-item w-full">
                             <img src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
                                 class="w-full" alt="Tailwind CSS Carousel component" />
@@ -174,10 +234,10 @@
                         </div>
                     </div>
 
-                    <div class="collapse bg-base-200">
+                    <div class="collapse border">
                         <input type="radio" name="my-accordion-1" checked="checked" />
                         <div class="collapse-title text-xl font-medium">
-                            Click to open this one and close others
+                            Tattoos
                         </div>
                         <div class="collapse-content">
                             <p>hello</p>
@@ -186,16 +246,9 @@
 
                 </div>
 
+                <!-- 3 carousel -->
                 <div class="flex flex-col w-1/3 gap-2">
                     <div class="w-full mx-auto carousel rounded-box">
-                        <div class="carousel-item w-full">
-                            <img src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" class="w-full"
-                                alt="Tailwind CSS Carousel component" />
-                        </div>
-                        <div class="carousel-item w-full">
-                            <img src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
-                                class="w-full" alt="Tailwind CSS Carousel component" />
-                        </div>
                         <div class="carousel-item w-full">
                             <img src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
                                 class="w-full" alt="Tailwind CSS Carousel component" />
@@ -218,10 +271,10 @@
                         </div>
                     </div>
 
-                    <div class="collapse bg-base-200">
+                    <div class="collapse border">
                         <input type="radio" name="my-accordion-1" checked="checked" />
                         <div class="collapse-title text-xl font-medium">
-                            Click to open this one and close others
+                            Drawings
                         </div>
                         <div class="collapse-content">
                             <p>hello</p>
@@ -232,69 +285,54 @@
 
             </div>
 
+            <!-- pinterest board -->
+            <div class="grid gap-4 grid-cols-2 my-2">
+                <div>
+                    <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80"
+                href="https://www.pinterest.com/mmasielll/tr/">
+            </a>
+                </div>
 
-            <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
-                <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-                    <span class="countdown font-mono text-5xl">
-                        <span style="--value:30;"></span>
-                    </span>
-                    months
-                </div>
-                <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-                    <span class="countdown font-mono text-5xl">
-                        <span style="--value:30;"></span>
-                    </span>
-                    days
-                </div>
-                <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-                    <span class="countdown font-mono text-5xl">
-                        <span style="--value:10;"></span>
-                    </span>
-                    hours
-                </div>
-                <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-                    <span class="countdown font-mono text-5xl">
-                        <span style="--value:24;"></span>
-                    </span>
-                    min
-                </div>
-                <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-                    <span class="countdown font-mono text-5xl">
-                        <span style="--value:42;"></span>
-                    </span>
-                    sec
+                <div>
+                    <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80"
+                href="https://www.pinterest.com/mmasielll/fits-that-i-lik3/">
+            </a>
                 </div>
             </div>
 
-            <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80"
-                href="https://www.pinterest.com/mmasielll/tr/"></a>
-
-            <a data-pin-do="embedBoard" data-pin-board-width="400" data-pin-scale-height="240" data-pin-scale-width="80"
-                href="https://www.pinterest.com/mmasielll/fits-that-i-lik3/"></a>
-
+            <!-- phone -->
             <div class="mockup-phone">
                 <div class="camera"></div>
                 <div class="display">
-                    <div class="artboard artboard-demo phone-2">
-                        <div class="chat chat-start">
-                            <div class="chat-bubble">Thanks for checking out my page :&#41;
-                                <br />
+                    <div class="artboard artboard-demo phone-2 relative">
+                        <!-- right side of chat-->
+                        
+                            <div class="chat chat-start">
+                                <div class="chat-bubble">Thanks for checking out my page :&#41;</div>
                             </div>
-                        </div>
-                        <div class="chat chat-start">
-                            <div class="chat-bubble">Talk to you soon &lt;3 <br /></div>
-                        </div>
-                        <div>
+                            <div class="chat chat-start ">
+                                <div class="chat-bubble">Talk to you soon &lt;3</div>
+                            </div>
+                        
+                        <!-- left side of chat-->
+                        
+                            <div class="chat chat-end">
+                                <div class="chat-bubble">Add a message</div>
+                            </div>
+                        
+                        <div class="absolute bottom-4 left-8">
                             <input type="text" placeholder="Message" class="input input-bordered w-full max-w-xs" />
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4">
+    <footer class="bg-pink-200 text-white py-4">
         <div class="container mx-auto px-6">
             <p class="text-center">Copyright © 2024 Masiel Martinez. All rights reserved.
             </p>
