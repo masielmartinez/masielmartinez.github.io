@@ -1,109 +1,122 @@
+
 import "./style.css";
 
-/**
- * Data Catalog Project Starter Code - SEA Stage 2
- *
- * This file is where you should be doing most of your work. You should
- * also make changes to the HTML and CSS files, but we want you to prioritize
- * demonstrating your understanding of data structures, and you'll do that
- * with the JavaScript code you write in this file.
- * 
- * The comments in this file are only to help you learn how the starter code
- * works. The instructions for the project are in the README. That said, here
- * are the three things you should do first to learn about the starter code:
- * - 1 - Change something small in index.html or style.css, then reload your 
- *    browser and make sure you can see that change. 
- * - 2 - On your browser, right click anywhere on the page and select
- *    "Inspect" to open the browser developer tools. Then, go to the "console"
- *    tab in the new window that opened up. This console is where you will see
- *    JavaScript errors and logs, which is extremely helpful for debugging.
- *    (These instructions assume you're using Chrome, opening developer tools
- *    may be different on other browsers. We suggest using Chrome.)
- * - 3 - Add another string to the titles array a few lines down. Reload your
- *    browser and observe what happens. You should see a fourth "card" appear
- *    with the string you added to the array, but a broken image.
- * 
- */
 
+// favorites category constants
+const FAVORITES_FOODS = "foods"
+const FAVORITES_BEVERAGES = "beverages"
+const FAVORITES_MUSIC_GENRES = "music genres"
+const FAVORITES_COLORS = "colors"
+const FAVORITES_PLACES = "places"
 
-const FRESH_PRINCE_URL = "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL = "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL = "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
+// array of category constants
+const FAVORITES_CATAGORIES = [FAVORITES_FOODS, FAVORITES_BEVERAGES, FAVORITES_MUSIC_GENRES, FAVORITES_COLORS, FAVORITES_PLACES]
 
-// This is an array of strings (TV show titles)
-let titles = [
-    "Fresh Prince of Bel Air",
-    "Curb Your Enthusiasm",
-    "East Los High"
-];
-// Your final submission should have much more data than this, and 
-// you should use more than just an array of strings to store it all.
+// array of favorites objects
+const FAVORITES = [
+    { catagory: FAVORITES_FOODS, name: "pasta" },
+    { catagory: FAVORITES_FOODS, name: "sushi" },
+    { catagory: FAVORITES_FOODS, name: "hamburgers" },
+    { catagory: FAVORITES_FOODS, name: "hawaiian bbq" },
+    { catagory: FAVORITES_FOODS, name: "thai" },
 
+    { catagory: FAVORITES_BEVERAGES, name: "water" },
+    { catagory: FAVORITES_BEVERAGES, name: "coffee" },
+    { catagory: FAVORITES_BEVERAGES, name: "celsius" },
+    { catagory: FAVORITES_BEVERAGES, name: "tea" },
+    { catagory: FAVORITES_BEVERAGES, name: "coconut water" },
 
-// This function adds cards the page to display the data in the array
-function showCards() {
-    const cardContainer = document.getElementById("card-container");
-    cardContainer.innerHTML = "";
-    const templateCard = document.querySelector(".card");
-    
-    for (let i = 0; i < titles.length; i++) {
-        let title = titles[i];
+    { catagory: FAVORITES_MUSIC_GENRES, name: "r&b" },
+    { catagory: FAVORITES_MUSIC_GENRES, name: "indie" },
+    { catagory: FAVORITES_MUSIC_GENRES, name: "cumbia" },
+    { catagory: FAVORITES_MUSIC_GENRES, name: "reggaeton" },
+    { catagory: FAVORITES_MUSIC_GENRES, name: "rock/punk" },
 
-        // This part of the code doesn't scale very well! After you add your
-        // own data, you'll need to do something totally different here.
-        let imageURL = "";
-        if (i == 0) {
-            imageURL = FRESH_PRINCE_URL;
-        } else if (i == 1) {
-            imageURL = CURB_POSTER_URL;
-        } else if (i == 2) {
-            imageURL = EAST_LOS_HIGH_POSTER_URL;
-        }
+    { catagory: FAVORITES_COLORS, name: "blue" },
+    { catagory: FAVORITES_COLORS, name: "pink" },
+    { catagory: FAVORITES_COLORS, name: "black" },
+    { catagory: FAVORITES_COLORS, name: "green" },
+    { catagory: FAVORITES_COLORS, name: "yellow" },
 
-        const nextCard = templateCard.cloneNode(true); // Copy the template card
-        editCardContent(nextCard, title, imageURL); // Edit title and image
-        cardContainer.appendChild(nextCard); // Add new card to the container
-    }
+    { catagory: FAVORITES_PLACES, name: "oxnard" },
+    { catagory: FAVORITES_PLACES, name: "mexico city" },
+    { catagory: FAVORITES_PLACES, name: "beach" },
+    { catagory: FAVORITES_PLACES, name: "san francisco" },
+    { catagory: FAVORITES_PLACES, name: "okaga" },
+
+]
+
+// function creates favorite item
+function createFavoriteItem (name) {
+    let newItem = document.createElement("span")
+        newItem.innerText = name
+        newItem.classList.add("badge", "mr-2", "mb-2")
+        return newItem
 }
 
-function editCardContent(card, newTitle, newImageURL) {
-    card.style.display = "block";
-
-    const cardHeader = card.querySelector("h2");
-    cardHeader.textContent = newTitle;
-
-    const cardImage = card.querySelector("img");
-    cardImage.src = newImageURL;
-    cardImage.alt = newTitle + " Poster";
-
-    // You can use console.log to help you debug!
-    // View the output by right clicking on your website,
-    // select "Inspect", then click on the "Console" tab
-    console.log("new card:", newTitle, "- html: ", card);
-}
-
-// This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
-
-function quoteAlert() {
-    console.log("Button Clicked!")
-    alert("I guess I can kiss heaven goodbye, because it got to be a sin to look this good!");
-}
-
-function removeLastCard() {
-    titles.pop(); // Remove last item in titles array
-    showCards(); // Call showCards again to refresh
-}
-
-
-
-let mainTitle = document.getElementById("main-title")
-console.log(mainTitle)
-mainTitle.addEventListener("click", function(){
-    console.log("title clicked")
-    const exampleElement = document.createElement("div")
-    exampleElement.innerHTML = "this is an exaple element"
-    document.body.appendChild(exampleElement)
+// setting up the select for favorites
+const favoritesContainer = document.getElementById("favorites");
+let favoritesSelect = favoritesContainer.querySelector("select")
+FAVORITES_CATAGORIES.forEach(catagory => {
+    let newOption = document.createElement("option")
+    newOption.innerText = catagory
+    favoritesSelect.appendChild(newOption)
 })
+
+// adding favorite items to favorites container
+let favoritesItemsContainer = document.getElementById("favorites-items");
+FAVORITES.forEach(itemCategory => {
+    let newItem = createFavoriteItem(itemCategory.name)
+    favoritesItemsContainer.appendChild(newItem)
+})
+
+// filtering my favorite items
+favoritesSelect.addEventListener("change", event => {
+    favoritesItemsContainer.innerHTML = ""
+    FAVORITES.forEach(itemCategory => {
+        let newItem = createFavoriteItem(itemCategory.name)
+        if (itemCategory.catagory === favoritesSelect.value) {
+            newItem.classList.add("badge-primary")
+        }
+        favoritesItemsContainer.appendChild(newItem)
+    })
+})
+
+// adding new message to message container
+let messageContainer = document.getElementById("messages-container")
+let messageButton = messageContainer.querySelector("button")
+messageButton.addEventListener("click", buttonClicked => {
+    let messageSentContainer = messageContainer.querySelector("#messages-sent")
+    let messageSent = document.createElement("div")
+    let messageInput = messageContainer.querySelector("#message-input")
+    messageSent.innerText = messageInput.value
+    messageSent.className = "chat-bubble chat-bubble-primary"
+    messageSentContainer.appendChild(messageSent)
+    messageInput.value = ""
+})
+
+// creating images array
+const IMG_PHOTO_SHOOT = ["/img/img_1.jpg", "/img/img_2.jpg", "/img/img_3.jpg", "/img/img_4.jpg", "/img/img_5.jpg"]
+const IMG_SELF_PORTRAITS = ["/img/img_6.jpg", "/img/img_7.jpg", "/img/img_8.jpg", "/img/img_9.jpg", "/img/img_10.jpg"]
+const IMG_DRAWINGS = ["/img/img_11.jpg", "/img/img_12.jpg", "/img/img_13.jpg", "/img/img_14.jpg", "/img/img_15.jpg"]
+
+// function to display images for each array
+function setUpCarousel(carousel, imgsArray) {
+    const carouselItemTemplate = carousel.querySelector(".carousel-item")
+    carousel.innerHTML = ""
+    imgsArray.forEach(img => {
+        const nextCarouselItem = carouselItemTemplate.cloneNode(true)
+        let carouselItemImg = nextCarouselItem.querySelector("img")
+        carouselItemImg.src = img
+        carousel.appendChild(nextCarouselItem)
+
+    })
+}
+
+// set up carousels with images
+setUpCarousel(document.getElementById("carousel-1"), IMG_PHOTO_SHOOT)
+setUpCarousel(document.getElementById("carousel-2"), IMG_SELF_PORTRAITS)
+setUpCarousel(document.getElementById("carousel-3"), IMG_DRAWINGS)
+
 
 
