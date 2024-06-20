@@ -53,7 +53,7 @@ function createFavoriteItem (name) {
         newItem.classList.add("badge", "mr-2", "mb-2")
         return newItem
 }
-console.log("Hello a third time")
+
 // setting up the select for favorites
 const favoritesContainer = document.getElementById("favorites");
 let favoritesSelect = favoritesContainer.querySelector("select")
@@ -95,7 +95,21 @@ messageButton.addEventListener("click", buttonClicked => {
     messageInput.value = ""
 })
 
-// removing previous message from message container
+// use enter button to send
+let messageBox = document.getElementById("message-input")
+    messageBox.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.key === "Enter") {
+        let messageSentContainer = messageContainer.querySelector("#messages-sent")
+        let messageSent = document.createElement("div")
+        let messageInput = messageContainer.querySelector("#message-input")
+        if(messageInput.value != "")
+        {messageSent.innerText = messageInput.value
+        messageSent.className = "chat-bubble chat-bubble-primary"
+        messageSentContainer.appendChild(messageSent)
+        messageInput.value = ""}
+    }
+})
 
 
 // creating images array
@@ -105,7 +119,6 @@ const IMG_DRAWINGS = ["/public/img/img_11.jpg", "/public/img/img_12.jpg", "/publ
 
 // function to display images for each array
 function setUpCarousel(carousel, imgsArray) {
-    console.log("Hello")
     const carouselItemTemplate = carousel.querySelector(".carousel-item")
     carousel.innerHTML = ""
     imgsArray.forEach(img => {
@@ -122,7 +135,6 @@ function setUpCarousel(carousel, imgsArray) {
 setUpCarousel(document.getElementById("carousel-1"), IMG_PHOTO_SHOOT)
 setUpCarousel(document.getElementById("carousel-2"), IMG_SELF_PORTRAITS)
 setUpCarousel(document.getElementById("carousel-3"), IMG_DRAWINGS)
-console.log("Hello Again")
 
 
 
