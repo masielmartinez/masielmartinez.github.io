@@ -89,10 +89,13 @@ messageButton.addEventListener("click", buttonClicked => {
     let messageSentContainer = messageContainer.querySelector("#messages-sent")
     let messageSent = document.createElement("div")
     let messageInput = messageContainer.querySelector("#message-input")
+    if(messageInput.value!="")
+    {
     messageSent.innerText = messageInput.value
     messageSent.className = "chat-bubble chat-bubble-primary"
     messageSentContainer.appendChild(messageSent)
     messageInput.value = ""
+}
 })
 
 // use enter button to send
