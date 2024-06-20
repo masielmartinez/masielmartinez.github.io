@@ -1,5 +1,5 @@
 
-import "./style.css";
+// import "./style.css";
 
 
 // favorites category constants
@@ -53,7 +53,7 @@ function createFavoriteItem (name) {
         newItem.classList.add("badge", "mr-2", "mb-2")
         return newItem
 }
-
+console.log("Hello a third time")
 // setting up the select for favorites
 const favoritesContainer = document.getElementById("favorites");
 let favoritesSelect = favoritesContainer.querySelector("select")
@@ -95,13 +95,17 @@ messageButton.addEventListener("click", buttonClicked => {
     messageInput.value = ""
 })
 
+// removing previous message from message container
+
+
 // creating images array
-const IMG_PHOTO_SHOOT = ["/img/img_1.jpg", "/img/img_2.jpg", "/img/img_3.jpg", "/img/img_4.jpg", "/img/img_5.jpg"]
-const IMG_SELF_PORTRAITS = ["/img/img_6.jpg", "/img/img_7.jpg", "/img/img_8.jpg", "/img/img_9.jpg", "/img/img_10.jpg"]
-const IMG_DRAWINGS = ["/img/img_11.jpg", "/img/img_12.jpg", "/img/img_13.jpg", "/img/img_14.jpg", "/img/img_15.jpg"]
+const IMG_PHOTO_SHOOT = ["/public/img/img_1.jpg", "/public/img/img_2.jpg", "/public/img/img_3.jpg", "/public/img/img_4.jpg", "/public/img/img_5.jpg"]
+const IMG_SELF_PORTRAITS = ["/public/img/img_6.jpg", "/public/img/img_7.jpg", "/public/img/img_8.jpg", "/public/img/img_9.jpg", "/public/img/img_10.jpg"]
+const IMG_DRAWINGS = ["/public/img/img_11.jpg", "/public/img/img_12.jpg", "/public/img/img_13.jpg", "/public/img/img_14.jpg", "/public/img/img_15.jpg"]
 
 // function to display images for each array
 function setUpCarousel(carousel, imgsArray) {
+    console.log("Hello")
     const carouselItemTemplate = carousel.querySelector(".carousel-item")
     carousel.innerHTML = ""
     imgsArray.forEach(img => {
@@ -109,6 +113,7 @@ function setUpCarousel(carousel, imgsArray) {
         let carouselItemImg = nextCarouselItem.querySelector("img")
         carouselItemImg.src = img
         carousel.appendChild(nextCarouselItem)
+        console.log(carouselItemImg)
 
     })
 }
@@ -117,6 +122,7 @@ function setUpCarousel(carousel, imgsArray) {
 setUpCarousel(document.getElementById("carousel-1"), IMG_PHOTO_SHOOT)
 setUpCarousel(document.getElementById("carousel-2"), IMG_SELF_PORTRAITS)
 setUpCarousel(document.getElementById("carousel-3"), IMG_DRAWINGS)
+console.log("Hello Again")
 
 
 
