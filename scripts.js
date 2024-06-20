@@ -103,11 +103,12 @@ let messageBox = document.getElementById("message-input")
         let messageSentContainer = messageContainer.querySelector("#messages-sent")
         let messageSent = document.createElement("div")
         let messageInput = messageContainer.querySelector("#message-input")
-        if(messageInput.value != "")
-        {messageSent.innerText = messageInput.value
+        if(messageInput.value != ""){
+        messageSent.innerText = messageInput.value
         messageSent.className = "chat-bubble chat-bubble-primary"
         messageSentContainer.appendChild(messageSent)
-        messageInput.value = ""}
+        messageInput.value = ""
+    }
     }
 })
 
